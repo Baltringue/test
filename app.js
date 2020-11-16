@@ -8,7 +8,9 @@ client.login(process.env.TOKEN);
 client.on('ready', onReady);
 
 const servers = [
+  'Oto Mustam',
   'Crocabulia',
+  'Thanatena',
   'Ombre',
   'Brumen',
   'Jahash',
@@ -16,6 +18,7 @@ const servers = [
   'Rubilax',
   'Pandore',
   'Atcham',
+  'Écho',
   'Ush',
   'Agride',
   'Ilyzaelle',
@@ -28,13 +31,13 @@ const previousCheck = {};
 let channel;
 
 async function onReady() {
-  channel = await client.channels.fetch('777632107341152306');
+  channel = await client.channels.fetch('777623644086992899');
   setInterval(checkModerator, 1000);
 }
 
 async function checkModerator() {
-  servers.forEach(async (server) => {
-          try {
+  for (const server of servers) {
+    try {
       const response = await axios.get(`https://panel.snowbot.eu/api/moderatorCheckerPC/checkModerator.php?gameServer=${server}`);
 
       if (previousCheck[server] !== response.data) {
@@ -58,6 +61,6 @@ async function checkModerator() {
       previousCheck[server] = response.data;
     } catch (error) {
       console.error(error);
-    });  
+    };
   }
 }
