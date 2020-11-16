@@ -8,17 +8,24 @@ client.login(process.env.TOKEN);
 client.on('ready', onReady);
 
 const servers = [
-  'Agride',
-  'Brumen',
+  'Oto Mustam',
   'Crocabulia',
-  'Eratz',
-  'Furye',
+  'Thanatena',
+  'Ombre',
+  'Brumen',
+  'Jahash',
   'Julith',
-  'Meriana',
-  'Merkator',
-  'Nidas',
+  'Rubilax',
+  'Pandore',
+  'Atcham',
+  'Écho',
   'Ush',
-  'Pandore'
+  'Agride',
+  'Ilyzaelle',
+  'Merkator',
+  'Furye',
+  'Nidas',
+  'Mériana'
 ];
 const previousCheck = {};
 
