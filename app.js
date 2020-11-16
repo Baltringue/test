@@ -51,6 +51,8 @@ async function checkModerator() {
       }
 
       previousCheck[server] = response.data;
-    } catch {};
+    } catch (error) {
+      console.error(error);
+    };
   }
 }
