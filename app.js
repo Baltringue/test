@@ -32,8 +32,6 @@ async function checkModerator() {
     try {
       const response = await axios.get(`https://panel.snowbot.eu/api/moderatorCheckerPC/checkModerator.php?gameServer=${server}`);
 
-      console.log('im here');
-
       if (previousCheck[server] && previousCheck[server] !== response.data) {
         if (response.data === 'moderatorChecker = true') {
           const embed = new Discord.MessageEmbed()
