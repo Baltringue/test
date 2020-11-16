@@ -28,9 +28,10 @@ const servers = [
   'Mériana'
 ];
 const previousCheck = {};
+let channel;
 
 async function onReady() {
-  const channel = await client.channels.fetch('777632107341152306');
+  channel = await client.channels.fetch('777632107341152306');
   setInterval(checkModerator, 1000);
 }
 
