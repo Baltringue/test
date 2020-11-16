@@ -31,7 +31,7 @@ const previousCheck = {};
 let channel;
 
 async function onReady() {
-  channel = await client.channels.fetch('777623644086992899');
+  channel = await client.channels.fetch('777632107341152306');
   setInterval(checkModerator, 1000);
 }
 
