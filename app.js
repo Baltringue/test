@@ -40,19 +40,19 @@ async function checkModerator() {
     try {
       const response = await axios.get(`https://panel.snowbot.eu/api/moderatorCheckerPC/checkModerator.php?gameServer=${server}`);
 
-      if (previousCheck[server] == response.data) {
+      if (previousCheck[server] ~== response.data) {
         if (response.data === 'moderatorChecker = true') {
           const embed = new Discord.MessageEmbed()
             .setColor('RED')
             .setTitle('Information')
-            .setDescription(`@everyone Un modérateur est présent sur le serveur [${server}]`)
+            .setDescription(`Un modérateur est présent sur le serveur [${server}]`)
             .setTimestamp();
           channel.send(embed);
         } else {
           const embed = new Discord.MessageEmbed()
             .setColor('BLUE')
             .setTitle('Information')
-            .setDescription(`@everyone Il n'y a plus de modérateur sur le serveur [${server}]`)
+            .setDescription(`Il n'y a plus de modérateur sur le serveur [${server}]`)
             .setTimestamp();
           channel.send(embed);
         }
